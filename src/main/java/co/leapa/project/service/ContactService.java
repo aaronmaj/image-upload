@@ -20,10 +20,13 @@ public class ContactService {
         return  contactRepository.save(contact);
     }
     public List<Contact> getContacts(){
-        return contactRepository.getContacts();
+        return contactRepository.findAll();
     }
     public Optional<Contact> findOne(Integer id) {
         return contactRepository.findById(id);
+    }
+    public Optional<Contact> findByImageName(String imageName) {
+        return contactRepository.findContactByName(imageName);
     }
     public Contact getContactByName(String name){
         return contactRepository.findContactByName(name).isPresent()?contactRepository.findContactByName(name).get():null;

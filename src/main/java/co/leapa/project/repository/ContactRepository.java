@@ -10,6 +10,7 @@ import java.util.Optional;
 @Repository
 public interface ContactRepository extends CrudRepository<Contact, Integer> {
 
-    public List<Contact> getContacts();
+    public List<Contact> findAll();
     public Optional<Contact> findContactByName(String name);
+    public Optional<Contact> findContactByImageName(String name);
 }
